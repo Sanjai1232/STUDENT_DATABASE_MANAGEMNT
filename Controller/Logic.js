@@ -10,7 +10,7 @@ res.json({
 
 //for creating data
 exports.Create=async(req,res,next)=>{
-     const namee="sajai";// change this to req.body
+     const namee="siva";// change this to req.body
      try{
     const avail= await Model.findOne({name:namee}); // use rollnumber here
     if(avail){
@@ -19,7 +19,7 @@ exports.Create=async(req,res,next)=>{
       })    
         // return console.log("error") 
     }
-     const create = await Model.create({name:namee})
+     const create = await Model.create({name:namee,department:"BCA"})
         res.json({
             message:"success",
         })
@@ -55,14 +55,16 @@ exports.update=async (req,res,next)=>{
 }
 
 
-
 // //for viewing all data
 exports.Alldata=async(req,res,next)=>{
-  const data= await Model.find();
+  const data= await Model.find({department: { $in: ["bca", "BCA"] }}); //filtering based on department //HERE WE SHOULD USE STAFF DEAPRTMRNT "eg:req.department"
   console.log(data);
   res.json({
     message:"all data fetched",
     data:data
   })
 }
+
+
+
 
