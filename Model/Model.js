@@ -1,3 +1,4 @@
+const e = require('express');
 const mongoose=require('mongoose');
 const STUSCHEMA=mongoose.Schema({
     name:String,
@@ -9,7 +10,12 @@ const STUSCHEMA=mongoose.Schema({
     Dateofjoin:String,
     DOG:String, //date of graduation
     Xii_marks:String,
-    x_marks:String
+    x_marks:String,
+    role:{
+        type:String,
+        enum:['student','admin'],
+        default:'student'
+    }
 })
 const model=mongoose.model('deatil',STUSCHEMA);
 module.exports=model;

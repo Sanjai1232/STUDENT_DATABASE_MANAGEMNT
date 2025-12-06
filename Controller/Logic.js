@@ -1,11 +1,23 @@
 const { model } = require('mongoose');
 const Model=require('../Model/Model');
-exports.Sample=(req,res,next)=>{
-res.json({
-    message:"sampale api"
-})
-}
-
+const jwt=require('jsonwebtoken');
+//login for Students
+exports.stulogin=async(req,res,next)=>{     
+     const avail=await Model.findOne({Rollno:req.body.rollno});
+     if(!avail){
+           console.log("user not found");
+        return res.status(404).json({
+            message:"user not found",
+            st:false
+        })
+     }
+     // add jwt token generation here
+     console.log("user found");
+        return res.json({
+            message:"login success",
+            st:true
+        })
+     }
 
 //for creating data
 exports.Create=async(req,res,next)=>{
@@ -57,8 +69,7 @@ exports.update=async (req,res,next)=>{
 
 // //for viewing all data
 exports.Alldata=async(req,res,next)=>{
-  const data= await Model.find({department: { $in: ["bca", "BCA"] }}); //filtering based on department //HERE WE SHOULD USE STAFF DEAPRTMRNT "eg:req.department"
-  console.log(data);
+  const data= await Model.find({department: { $in: ["bca", "BCA"] }}); //filtering based on department //HERE WE SHOULD USE STAFF DEAPRTMRNT "eg:req.department" 
   res.json({
     message:"all data fetched",
     data:data
