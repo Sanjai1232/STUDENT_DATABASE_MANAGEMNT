@@ -57,8 +57,12 @@ exports.update=async (req,res,next)=>{
 
 
 // //for viewing all data
-// exports.Alldata=async()=>{
-        
-//   const data=
-// }
+exports.Alldata=async(req,res,next)=>{
+  const data= await Model.find();
+  console.log(data);
+  res.json({
+    message:"all data fetched",
+    data:data
+  })
+}
 
