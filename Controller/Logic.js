@@ -1,6 +1,5 @@
 const { model } = require('mongoose');
 const Model=require('../Model/Model');
-
 exports.Sample=(req,res,next)=>{
 res.json({
     message:"sampale api"
@@ -10,16 +9,16 @@ res.json({
 
 //for creating data
 exports.Create=async(req,res,next)=>{
-     const namee="siva";// change this to req.body
+     const namee="joseph";// change this to req.body
      try{
     const avail= await Model.findOne({name:namee}); // use rollnumber here
     if(avail){
-       res.status(404).json({
+      return res.status(404).json({
         message:"id already exist"
       })    
         // return console.log("error") 
     }
-     const create = await Model.create({name:namee,department:"BCA"})
+      const create = await Model.create({name:namee,department:"BCA"})
         res.json({
             message:"success",
         })
@@ -30,7 +29,7 @@ exports.Create=async(req,res,next)=>{
 
 //for updating data
 exports.update=async (req,res,next)=>{
-     const checking="sajai" //inga already intha rollno irrukanu check pannanum
+     const checking="joseph" //inga already intha rollno irrukanu check pannanum
      const obj={
         name:"sanjai",// inga new rollno kodukanum
         Rollno:"259"
@@ -82,7 +81,27 @@ exports.deletestu=async(req,res,next)=>{
     }catch(err){
         console.log(err);
     }
+}
 
+//creating a api for Student
+exports.Myprofile=async(req,res,next)=>{
+    const Rollno="259" //CHANGE THIS TO REQ.BODY.ROLLNO
+    const user=await Model.findOne({Rollno:Rollno})
+    try{
+    if(user){
+      return res.json({
+        status:true,
+        msg:user.name,
+        user
+       })       
+    }
+    return res.status(404).json({
+        message:"user not found",
+        status:false
+    })
+}catch(err){
+ console.log(err)
+}
 }
 
 
