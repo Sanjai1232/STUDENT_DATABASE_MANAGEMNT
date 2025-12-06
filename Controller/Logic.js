@@ -30,15 +30,16 @@ exports.Create=async(req,res,next)=>{
 
 //for updating data
 exports.update=async (req,res,next)=>{
-     const checking="Sanjai" //inga already intha rollno irrukanu check pannanum
+     const checking="sajai" //inga already intha rollno irrukanu check pannanum
      const obj={
-        name:"siva"// inga new rollno kodukanum
+        name:"sanjai",// inga new rollno kodukanum
+        Rollno:"259"
      }
      try{
         console.log(checking);
          const avail=await Model.findOne({name:checking})
-         if(avail){                                   //which rollno to update👇 ||| what content to update
-            const update=await Model.findOneAndUpdate({name:checking},             {$set:obj})//filtering based on rollno so we can upadte easily
+         if(avail){                                   //which rollno to update  ||| what content to update
+            const update=await Model.findOneAndUpdate({name:checking},        {$set:obj})//filtering based on rollno so we can upadte easily
            console.log(update);
             return res.json({
                 message:"Succesfully data updated"
@@ -65,6 +66,24 @@ exports.Alldata=async(req,res,next)=>{
   })
 }
 
+
+//deleting student API
+exports.deletestu=async(req,res,next)=>{
+    const Rollno="259";
+    try{
+        const available= await Model.findOne({Rollno:Rollno});
+      if (available) {
+        const dlt=await Model.findOneAndDelete({Rollno:Rollno});
+        res.json({
+            message:"data deleted successfully",
+            data:dlt
+        })   
+      }
+    }catch(err){
+        console.log(err);
+    }
+
+}
 
 
 
