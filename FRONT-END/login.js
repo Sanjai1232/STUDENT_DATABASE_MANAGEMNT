@@ -11,7 +11,6 @@ loginbtn.onclick=async(e)=>{
       alert("Please fill all the fields");
       return;
    }
-
     const obj={
         name:rollno.value,
         password:password.value,
@@ -26,7 +25,7 @@ loginbtn.onclick=async(e)=>{
         body:JSON.stringify(obj)
       })
     const data=await res.json();
-    console.log(data.st);// if it is true then login success else failed and add redirect page here for both admin and student
+    console.log(data.message);// if it is true then login success else failed and add redirect page here for both admin and student
      if(!data.st){
        return alert("login failed");
      }

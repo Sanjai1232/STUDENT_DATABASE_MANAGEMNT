@@ -16,7 +16,7 @@ btn.onclick=async(e)=>{
         body:JSON.stringify(obj)
     })
     const data=await res.json();
-    console.log(data);
+    console.log(data.message);
     if(data.st){
         alert("login successful");
     }else{

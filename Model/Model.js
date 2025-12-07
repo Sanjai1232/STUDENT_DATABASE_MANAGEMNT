@@ -2,6 +2,7 @@ const e = require('express');
 const mongoose=require('mongoose');
 const STUSCHEMA=mongoose.Schema({
     name:String,
+    password:String,
     department:String,
     Rollno:String,
     MobileNumber:String,

@@ -5,23 +5,29 @@ const jwt=require('jsonwebtoken');
 
 //login for Students
 exports.stulogin=async(req,res,next)=>{     
-     const avail=await Model.findOne({Rollno:req.body.Rollno, password:req.body.password,role:"student"});
+     const avail=await Model.findOne({Rollno:req.body.Rollno,role:"student"});
      console.log(req.body.rollno, req.body.role);
      
      if(!avail){
-           console.log("user not found");
+        console.log("user not found");
         return res.status(404).json({
             message:"user not found",
             st:false
         })
      }
-     // add jwt token generation here
-     console.log("user found");
-        return res.json({
-            message:"login success",
-           avail,
-            st:true
-        })
+      if(avail.password==req.body.password){ 
+      // add jwt token generation here
+      console.log("user found");
+          return res.json({
+              message:"login success",
+            avail,
+              st:true
+          })      
+     }else{
+        return res.status(404).json({
+            message:"password incorrect",
+          
+          })}
      }
 
      //login for Staff
@@ -34,13 +40,22 @@ exports.stulogin=async(req,res,next)=>{
             message:"admin not found",
             st:false
         })}
-             // add jwt token generation here
-           console.log("user found");
+        if(avail.password==req.body.password){
+
+                   // add jwt token generation here
+             console.log("user found");
            return res.json({
             avail,
             message:"login success",
             st:true
-        })
+            })
+    
+        }else{
+            return res.status(404).json({
+                message:"password incorrect",
+                st:false
+            })
+        }
      }
 
 
@@ -66,16 +81,25 @@ exports.Create=async(req,res,next)=>{
 
 //for updating data
 exports.update=async (req,res,next)=>{
-     const checking="joseph" //inga already intha rollno irrukanu check pannanum
+     const checking="sanjai" //inga already intha rollno irrukanu check pannanum
      const obj={
         name:"sanjai",// inga new rollno kodukanum
-        Rollno:"259"
+        Rollno:"259",
+        department:"BCA",
+        MobileNumber:"9876543210",
+        CurrentGPA:"9.0",
+        OverallCGPA:"8.5",
+        Dateofjoin:"01-08-2020",
+        DOG:"30-05-2024",
+        Xii_marks:"85%",
+        x_marks:"90%",
+        password:"sanjai123"
      }
      try{
         console.log(checking);
          const avail=await Model.findOne({name:checking})
          if(avail){                                   //which rollno to update  ||| what content to update
-            const update=await Model.findOneAndUpdate({name:checking},        {$set:obj})//filtering based on rollno so we can upadte easily
+            const update=await Model.findOneAndUpdate({name:checking}, {$set:obj})//filtering based on rollno so we can upadte easily
            console.log(update);
             return res.json({
                 message:"Succesfully data updated"
@@ -139,6 +163,3 @@ exports.Myprofile=async(req,res,next)=>{
  console.log(err)
 }
 }
-
-
-
