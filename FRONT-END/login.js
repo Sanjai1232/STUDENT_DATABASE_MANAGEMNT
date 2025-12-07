@@ -21,12 +21,16 @@ loginbtn.onclick=async(e)=>{
     const res=await fetch("http://localhost:3000/adminlogin",{
         method:"POST",
         headers:{
-            "Content-Type":"application/json"
+            "Content-Type":"application/json"   // add token in header
         },
         body:JSON.stringify(obj)
       })
     const data=await res.json();
-    console.log(data.st);
+    console.log(data.st);// if it is true then login success else failed and add redirect page here for both admin and student
+     if(!data.st){
+       return alert("login failed");
+     }
+    alert("login successful");
     console.log(data.message);
     console.log(data.avail);
     
