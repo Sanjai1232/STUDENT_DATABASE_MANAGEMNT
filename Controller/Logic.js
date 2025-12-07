@@ -1,9 +1,13 @@
 const { model } = require('mongoose');
 const Model=require('../Model/Model');
 const jwt=require('jsonwebtoken');
+
+
 //login for Students
 exports.stulogin=async(req,res,next)=>{     
-     const avail=await Model.findOne({Rollno:req.body.rollno});
+     const avail=await Model.findOne({Rollno:req.body.rollno,role:req.body.role});
+     console.log(req.body.rollno, req.body.role);
+     
      if(!avail){
            console.log("user not found");
         return res.status(404).json({
@@ -18,6 +22,25 @@ exports.stulogin=async(req,res,next)=>{
             st:true
         })
      }
+
+     //login for Staff
+     exports.adminlogin=async(req,res,next)=>{     
+    const avail = await Model.findOne({ name: req.body.name ,department: req.body.department,role:req.body.role});  
+    console.log(req.body.department, req.body.name,req.body.role);   
+           if (!avail) {
+            console.log("user not found");
+            return res.status(404).json({
+            message:"admin not found",
+            st:false
+        })}
+             // add jwt token generation here
+           console.log("user found");
+           return res.json({
+            message:"login success",
+            st:true
+        })
+     }
+
 
 //for creating data
 exports.Create=async(req,res,next)=>{

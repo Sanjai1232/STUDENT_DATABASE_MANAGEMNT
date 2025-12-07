@@ -1,20 +1,20 @@
-const api="http://localhost:3000/All_Student"
+
 // const btn=document.getElementById("demo")
 const loginbtn=document.getElementById("loginbtn")
 const rollno=document.getElementById("username")
 const password=document.getElementById("password")
 const role=document.getElementById("role")
-
+const department=document.getElementById("depart")
 loginbtn.onclick=async(e)=>{
  e.preventDefault();
     const obj={
-        rollno:rollno.value,
+        name:rollno.value,
         password:password.value,
-        role:role.value
+        role:"admin",
+        department:department.value
     }
-    console.log(obj.rollno,obj.password,obj.role);
-     
-    const res=await fetch("http://localhost:3000/slogin",{
+    console.log(obj.name,obj.password,obj.role);
+    const res=await fetch("http://localhost:3000/adminlogin",{
         method:"POST",
         headers:{
             "Content-Type":"application/json"
@@ -23,5 +23,6 @@ loginbtn.onclick=async(e)=>{
       })
     const data=await res.json();
     console.log(data.st);
+    console.log(data.message);
   
 }
