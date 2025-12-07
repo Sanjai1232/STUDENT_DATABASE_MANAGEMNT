@@ -10,10 +10,9 @@ loginbtn.onclick=async(e)=>{
     const obj={
         name:rollno.value,
         password:password.value,
-        role:"admin",
         department:department.value
     }
-    console.log(obj.name,obj.password,obj.role);
+    console.log(obj.name,obj.password,obj.department);
     const res=await fetch("http://localhost:3000/adminlogin",{
         method:"POST",
         headers:{
@@ -24,5 +23,6 @@ loginbtn.onclick=async(e)=>{
     const data=await res.json();
     console.log(data.st);
     console.log(data.message);
-  
+    console.log(data.avail);
+    
 }

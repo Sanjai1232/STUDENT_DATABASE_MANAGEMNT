@@ -5,7 +5,7 @@ const jwt=require('jsonwebtoken');
 
 //login for Students
 exports.stulogin=async(req,res,next)=>{     
-     const avail=await Model.findOne({Rollno:req.body.rollno,role:req.body.role});
+     const avail=await Model.findOne({Rollno:req.body.Rollno, password:req.body.password,role:"student"});
      console.log(req.body.rollno, req.body.role);
      
      if(!avail){
@@ -19,14 +19,15 @@ exports.stulogin=async(req,res,next)=>{
      console.log("user found");
         return res.json({
             message:"login success",
+           avail,
             st:true
         })
      }
 
      //login for Staff
      exports.adminlogin=async(req,res,next)=>{     
-    const avail = await Model.findOne({ name: req.body.name ,department: req.body.department,role:req.body.role});  
-    console.log(req.body.department, req.body.name,req.body.role);   
+    const avail = await Model.findOne({ name: req.body.name ,department: req.body.department,role:"admin"});  
+    console.log(req.body.department, req.body.name);   
            if (!avail) {
             console.log("user not found");
             return res.status(404).json({
@@ -36,6 +37,7 @@ exports.stulogin=async(req,res,next)=>{
              // add jwt token generation here
            console.log("user found");
            return res.json({
+            avail,
             message:"login success",
             st:true
         })
