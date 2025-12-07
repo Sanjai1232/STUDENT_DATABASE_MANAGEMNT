@@ -7,6 +7,11 @@ const role=document.getElementById("role")
 const department=document.getElementById("depart")
 loginbtn.onclick=async(e)=>{
  e.preventDefault();
+   if(name.value==="" || password.value==="" || department.value===""){
+      alert("Please fill all the fields");
+      return;
+   }
+
     const obj={
         name:rollno.value,
         password:password.value,
