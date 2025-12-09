@@ -10,20 +10,10 @@ exports.auth = (req, res, next) => {
     const token = authHeader.split(" ")[1];
 
     try {
-        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        const decoded = jwt.verify(token, "0000");
         req.user = decoded; // contains id + role
         next();
     } catch (err) {
         res.status(403).json({ message: "Invalid token" });
     }
 };
-
-exports.allowRoles = (...roles) => {
-    return (req, res, next) => {
-        if (!roles.includes(req.user.role)) {
-            return res.status(403).json({ message: "Access denied" });
-        }
-        next();
-    };
-};
- module.exports={auth,allowRoles};

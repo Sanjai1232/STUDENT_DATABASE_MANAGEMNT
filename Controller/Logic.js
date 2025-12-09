@@ -17,10 +17,17 @@ exports.stulogin=async(req,res,next)=>{
      }
       if(avail.password==req.body.password){ 
       // add jwt token generation here
+
+      const payload={
+        Rollno:avail.Rollno,
+        role:avail.role
+      }
+      const token=jwt.sign(payload,"0000",{expiresIn:'1h'})
       console.log("user found");
           return res.json({
               message:"login success",
             avail,
+            token,
               st:true
           })      
      }else{
@@ -145,7 +152,7 @@ exports.deletestu=async(req,res,next)=>{
 
 //creating a api for Student
 exports.Myprofile=async(req,res,next)=>{
-    const Rollno="259" //CHANGE THIS TO REQ.BODY.ROLLNO
+    const Rollno=req.user.Rollno//CHANGE THIS TO REQ.BODY.ROLLNO
     const user=await Model.findOne({Rollno:Rollno})
     try{
     if(user){

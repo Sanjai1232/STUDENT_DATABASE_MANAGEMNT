@@ -19,7 +19,10 @@ btn.onclick=async(e)=>{
     console.log(data.message);
     if(data.st){
         alert("login successful");
+        console.log(data);
+        console.log(data.token);
         window.location.href="studashboard.html";
+        localStorage.setItem("token",data.token);
     }else{
         alert("login failed");
     }

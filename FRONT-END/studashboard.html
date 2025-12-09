@@ -3,9 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Student Profile</title>
+    <link rel="stylesheet" href="../CSS/Studash.css">
 </head>
 <body>
-    <h1>Welcome to the Student Dashboard</h1>
+    <div class="container">
+        <nav class="topbar">
+            <div class="nav-left">
+                <span class="logo">Academix</span>
+            </div>
+            <div class="nav-right">
+                <div class="user-badge">
+                    <span id="navName">Student</span>
+                </div>
+            </div>
+        </nav>
+
+        <main class="content">
+            <div class="hero-section">
+                <div class="hero-text">
+                    <h1 id="heroName">Loading...</h1>
+                    <p id="heroRoll">-</p>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-pill">
+                        <span class="pill-value" id="heroGpa">-</span>
+                        <span class="pill-label">Current GPA</span>
+                    </div>
+                    <div class="stat-pill">
+                        <span class="pill-value" id="heroCgpa">-</span>
+                        <span class="pill-label">Overall CGPA</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <h3>Profile</h3>
+                    <div class="card-content">
+                        <div class="field">
+                            <label>Department</label>
+                            <p id="department">-</p>
+                        </div>
+                        <div class="field">
+                            <label>Mobile</label>
+                            <p id="mobile">-</p>
+                        </div>
+                        <div class="field">
+                            <label>Joined</label>
+                            <p id="doj">-</p>
+                        </div>
+                        <div class="field">
+                            <label>Graduation</label>
+                            <p id="dog">-</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Academics</h3>
+                    <div class="card-content">
+                        <div class="field">
+                            <label>Current GPA</label>
+                            <p id="gpa">-</p>
+                        </div>
+                        <div class="field">
+                            <label>Overall CGPA</label>
+                            <p id="cgpa">-</p>
+                        </div>
+                        <div class="field">
+                            <label>Class XII</label>
+                            <p id="xii">-</p>
+                        </div>
+                        <div class="field">
+                            <label>Class X</label>
+                            <p id="x">-</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../Script/STUDASH.js"></script>
 </body>
 </html>
