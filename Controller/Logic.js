@@ -132,7 +132,7 @@ exports.update=async (req,res,next)=>{
 // //for viewing all data
 exports.Alldata=async(req,res,next)=>{
       if(!req.user || req.user.role !== 'admin') {
-        return res.status(403).json({ message: "Access denied" });
+        return res.status(403).json({ message: "Access denied",st:false });
     }
   const data= await Model.find({department: { $in: ["bca", "BCA"] }}); //filtering based on department //HERE WE SHOULD USE STAFF DEAPRTMRNT "eg:req.department" 
   res.json({
