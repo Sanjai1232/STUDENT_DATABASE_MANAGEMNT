@@ -30,6 +30,7 @@ loginbtn.onclick=async(e)=>{
        return alert("login failed");
      }
     alert("login successful");
+    window.location.href="dashboard.html";
     console.log(data.message);
     console.log(data.avail);
     

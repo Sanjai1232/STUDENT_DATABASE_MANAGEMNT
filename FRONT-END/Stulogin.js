@@ -19,6 +19,7 @@ btn.onclick=async(e)=>{
     console.log(data.message);
     if(data.st){
         alert("login successful");
+        window.location.href="studashboard.html";
     }else{
         alert("login failed");
     }
