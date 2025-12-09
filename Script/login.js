@@ -1,5 +1,3 @@
-
-// const btn=document.getElementById("demo")
 const loginbtn=document.getElementById("loginbtn")
 const rollno=document.getElementById("username")
 const password=document.getElementById("password")
