@@ -24,5 +24,4 @@ const api="http://localhost:3000/my-profile";
         document.getElementById('heroCgpa').textContent = studentData.user.OverallCGPA;
         document.getElementById('xii').textContent = studentData.user.Xii_marks;
         document.getElementById('x').textContent = studentData.user.x_marks;
-        
     })
