@@ -48,15 +48,21 @@ exports.stulogin=async(req,res,next)=>{
             st:false
         })}
         if(avail.password==req.body.password){
-
-                   // add jwt token generation here
+              const payload={
+                name:avail.name,
+                role:avail.role,
+                department:avail.department
+              }
+              const token=jwt.sign(payload,"0000",{expiresIn:'1h'})
+             // add jwt token generation here
              console.log("user found");
            return res.json({
             avail,
+            token,
             message:"login success",
             st:true
             })
-    
+  
         }else{
             return res.status(404).json({
                 message:"password incorrect",
@@ -125,6 +131,9 @@ exports.update=async (req,res,next)=>{
 
 // //for viewing all data
 exports.Alldata=async(req,res,next)=>{
+      if(!req.user || req.user.role !== 'admin') {
+        return res.status(403).json({ message: "Access denied" });
+    }
   const data= await Model.find({department: { $in: ["bca", "BCA"] }}); //filtering based on department //HERE WE SHOULD USE STAFF DEAPRTMRNT "eg:req.department" 
   res.json({
     message:"all data fetched",
@@ -135,6 +144,11 @@ exports.Alldata=async(req,res,next)=>{
 
 //deleting student API
 exports.deletestu=async(req,res,next)=>{
+  
+    if(!req.user || req.user.role !== 'admin') {
+        return res.status(403).json({ message: "Access denied" });
+    }
+
     const Rollno="259";
     try{
         const available= await Model.findOne({Rollno:Rollno});

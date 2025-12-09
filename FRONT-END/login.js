@@ -29,9 +29,10 @@ loginbtn.onclick=async(e)=>{
      if(!data.st){
        return alert("login failed");
      }
+     localStorage.setItem("token",data.token);
     alert("login successful");
     window.location.href="dashboard.html";
     console.log(data.message);
     console.log(data.avail);
-    
+    console.log(data.token); 
 }
