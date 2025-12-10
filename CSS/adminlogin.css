@@ -8,7 +8,7 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(135deg, #191938 0%, #0d0c0f 100%);
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -17,7 +17,7 @@
     }
 
     .login-container {
-      background: white;
+   background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
       padding: 45px 40px;
       border-radius: 20px;
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
@@ -27,7 +27,7 @@
 
     h2 {
       text-align: center;
-      color: #2d3436;
+      color: #dddddd;
       margin-bottom: 35px;
       font-size: 28px;
       font-weight: 600;
