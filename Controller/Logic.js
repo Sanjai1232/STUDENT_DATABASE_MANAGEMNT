@@ -74,18 +74,21 @@ exports.stulogin=async(req,res,next)=>{
 
 //for creating data
 exports.Create=async(req,res,next)=>{
-     const namee="joseph";// change this to req.body
+     //const namee="joseph";// change this to req.body
      try{
-    const avail= await Model.findOne({name:namee}); // use rollnumber here
+    const avail= await Model.findOne({Rollno:req.body.Rollno}); // use rollnumber here
     if(avail){
       return res.status(404).json({
-        message:"id already exist"
+        message:"id already exist",
+        sts:false
       })    
         // return console.log("error") 
     }
-      const create = await Model.create({name:namee,department:"BCA"})
+      const create = await Model.create(req.body); //req.body
         res.json({
             message:"success",
+            sts:true,
+            create
         })
     }catch(err){
         console.log(err);

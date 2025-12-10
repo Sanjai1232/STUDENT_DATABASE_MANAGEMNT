@@ -14,6 +14,8 @@ const STUSCHEMA=mongoose.Schema({
     DOG:Date, //date of graduation
     Xii_marks:String,
     x_marks:String,
+    address:String,
+    email:String,
     role:{
         type:String,
         enum:['student','admin'],

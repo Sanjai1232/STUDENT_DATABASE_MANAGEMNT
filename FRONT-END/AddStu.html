@@ -10,8 +10,6 @@
 <body>
     <div class="form-container">
         <h1>Add New Student</h1>
-        
-        <form action="/add-student" method="POST">
             <div class="section">
                 <h3>Personal Details</h3>
                 <div class="form-group">
@@ -23,6 +21,16 @@
                     <label for="age">Age</label>
                     <input type="text" id="age" name="age" placeholder="Enter age" required>
                 </div>
+
+                <div class="form-group">
+                    <label for="add">address</label>
+                    <input type="text" id="add" name="add" placeholder="Enter address" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">email</label>
+                    <input type="text" id="email" name="email" placeholder="Enter email" required>
+                </div>  
                 
                 <div class="form-group">
                     <label for="dob">Date of Birth</label>
@@ -86,12 +94,12 @@
                 </div>
             </div>
 
-            <button type="submit">Add Student</button>
-        </form>
+            <button  id="btn" type="submit">Add Student</button>
 
         <div class="back-link">
             <a href="/FRONT-END/dashboard.html">← Back to Dashboard</a>
         </div>
     </div>
+    <script src="../Script/AddstuScript.js"></script>
 </body>
 </html>
