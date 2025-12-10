@@ -24,6 +24,6 @@ btn.onclick=async(e)=>{
         window.location.href="StudentLogin.html";
         return;
     }
-    console.log(data);
+    window.location.href="AddStu.html";
     
 }

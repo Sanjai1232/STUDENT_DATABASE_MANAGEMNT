@@ -3,60 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Add Student</title>
+    <link rel="stylesheet" href="../CSS/addstu.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Add Student Page</h1>
-    <form action="/add-student" method="POST">
-        <label for="name">Student Name:</label>
-        <input type="text" id="name" name="name" required>
-        <br><br>
-        <label for="age">Student Age:</label>
-        <input type="text" id="age" name="age" required>
-        <br><br>
-        <label for="dob">Student Date Of Birth:</label>
-        <input type="date" id="dob" name="dob" required>
-        <br><br>
-        <label for="password">Student Password:</label>
-        <input type="password" id="password" name="password" required>
-        <br><br>
-        <label for="dep">Student Department:</label>
-        <input type="text" id="Department" name="dep" required>
-        <br><br>
+    <div class="form-container">
+        <h1>Add New Student</h1>
+        
+        <form action="/add-student" method="POST">
+            <div class="section">
+                <h3>Personal Details</h3>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter student's full name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="text" id="age" name="age" placeholder="Enter age" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="mno">Mobile Number</label>
+                    <input type="text" id="mno" name="nn" placeholder="+91 XXXXX XXXXX" required>
+                </div>
+            </div>
 
-                 <label for="rno">Student Rollno:</label>
-        <input type="text" id="Rollno" name="rno" required>
-        <br><br>
+            <div class="section">
+                <h3>Academic Information</h3>
+                <div class="form-group">
+                    <label for="Department">Department</label>
+                    <input type="text" id="Department" name="dep" placeholder="e.g., Computer Science Engineering" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="Rollno">Roll Number</label>
+                    <input type="text" id="Rollno" name="rno" placeholder="e.g., CSE2021001" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="gpa">Current Semester GPA</label>
+                    <input type="text" id="gpa" name="gpa" placeholder="e.g., 8.75" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="cgpa">Overall CGPA</label>
+                    <input type="text" id="cgpa" name="OverallCGPA" placeholder="e.g., 8.52" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="xii">Class XII Marks (%)</label>
+                    <input type="text" id="xii" name="xii" placeholder="e.g., 92.5" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="x">Class X Marks (%)</label>
+                    <input type="text" id="x" name="x" placeholder="e.g., 95.0" required>
+                </div>
+            </div>
 
-                 <label for="nn">Student Mobile text</label>
-        <input type="text" id="mno" name="nn" required>
-        <br><br>
+            <div class="section">
+                <h3>Enrollment Details</h3>
+                <div class="form-group">
+                    <label for="DOJ">Date of Joining</label>
+                    <input type="date" id="DOJ" name="DOj" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="DOG">Expected Graduation Date</label>
+                    <input type="date" id="DOG" name="DOG" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Create Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter secure password" required>
+                </div>
+            </div>
 
-                 <label for="gpa">Student CurrentGPA</label>
-        <input type="text" id="gpa" name="gpa" required>
-        <br><br>
+            <button type="submit">Add Student</button>
+        </form>
 
-                 <label for="OverallCGPA">Student OverallCGPA </label>
-        <input type="text" id="cgpa" name="OverallCGPA" required>
-        <br><br>
-
-          <label for="DOJ">Student Date-Of-Join </label>
-        <input type="date" id="DOJ" name="DOj" required>
-        <br><br>
-
-          <label for="DOG">Student Date-Of-Graduvation</label>
-        <input type="date" id="DOG" name="DOG" required>
-        <br><br>
-
-          <label for="xii">Student 12th mark </label>
-        <input type="text" id="xii" name="xii" required>
-        <br><br>
-
-            <label for="x">Student 10th mark </label>
-        <input type="text" id="x" name="x" required>
-        <br><br>
-        <input type="submit" value="Add Student">
-
-
+        <div class="back-link">
+            <a href="/FRONT-END/dashboard.html">← Back to Dashboard</a>
+        </div>
+    </div>
 </body>
 </html>
