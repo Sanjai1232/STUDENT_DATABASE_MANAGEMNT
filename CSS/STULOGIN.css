@@ -1,103 +1,104 @@
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #191938 0%, #0d0c0f 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
 
-    .login-container {
-      background: white;
-      padding: 45px 40px;
-      border-radius: 20px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-      width: 100%;
-      max-width: 420px;
-    }
+/* CARD */
+.login-container {
+ background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  padding: 45px 40px;
+  border-radius: 18px;
+  width: 100%;
+  max-width: 420px;
+}
 
-    h1 {
-      text-align: center;
-      color: #2d3436;
-      margin-bottom: 35px;
-      font-size: 28px;
-      font-weight: 600;
-    }
+/* TITLE */
+h1 {
+  text-align: center;
+  color: #ededed;
+  margin-bottom: 28px;
+  font-size: 27px;
+  font-weight: 600;
+}
 
-    .form-group {
-      margin-bottom: 24px;
-    }
+/* INPUTS */
+.form-group {
+  margin-bottom: 22px;
+}
 
-    input {
-      width: 100%;
-      padding: 14px 18px;
-      border: 2px solid #e8eaed;
-      border-radius: 12px;
-      font-size: 15px;
-      font-family: 'Poppins', sans-serif;
-      transition: all 0.3s ease;
-      outline: none;
-      background: #f8f9fa;
-    }
+input {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 12px;
+  font-size: 15px;
+  background: #f3f0ff;                /* 🎨 light purple to match theme */
+  border: 2px solid #d6d2ff;          /* 🎨 soft purple border */
+  outline: none;
+  transition: 0.3s ease;
+}
 
-    input::placeholder {
-      color: #95a5a6;
-    }
+input::placeholder {
+  color: #9fa1b3;
+}
 
-    input:focus {
-      border-color: #667eea;
-      background: white;
-      box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
-    }
+input:focus {
+  border-color: #667eea;              /* 🎨 gradient blue */
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
+}
 
-    button {
-      width: 100%;
-      padding: 15px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      border: none;
-      border-radius: 12px;
-      font-size: 16px;
-      font-weight: 600;
-      font-family: 'Poppins', sans-serif;
-      cursor: pointer;
-      margin-top: 10px;
-      transition: all 0.3s ease;
-    }
+/* BUTTON */
+button {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 5px;
+  transition: 0.3s ease;
+}
 
-    button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
-    }
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 8px 20px rgba(102, 126, 234, 0.6);
+}
 
-    button:active {
-      transform: translateY(0);
-    }
+button:active {
+  transform: translateY(0);
+}
 
-    .admin-link {
-      text-align: center;
-      margin-top: 25px;
-      padding-top: 25px;
-      border-top: 1px solid #e8eaed;
-    }
+/* ADMIN LINK */
+.admin-link {
+  text-align: center;
+  margin-top: 25px;
+  padding-top: 25px;
+  border-top: 1px solid #e4e2ff;       /* 🎨 soft matching line */
+}
 
-    .admin-link a {
-      color: #667eea;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
+.admin-link a {
+  color: #667eea;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
 
-    .admin-link a:hover {
-      color: #764ba2;
-    }
+.admin-link a:hover {
+  color: #764ba2;
+}
