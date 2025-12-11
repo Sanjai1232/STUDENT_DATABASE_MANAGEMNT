@@ -29,7 +29,7 @@ loginbtn.onclick=async(e)=>{
      }
      localStorage.setItem("token",data.token);
     alert("login successful");
-    window.location.href="dashboard.html";
+    window.location.href="admindashboard.html";
     console.log(data.message);
     console.log(data.avail);
     console.log(data.token); 
