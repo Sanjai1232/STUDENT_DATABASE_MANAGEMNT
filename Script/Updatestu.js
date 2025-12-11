@@ -35,8 +35,8 @@ btn2.onclick=async(e)=>{
     X_marks:x.value,
     address:add.value,
     email:email.value,
-       Dateofjoin: doj.value ? new Date(doj.value.split("-").reverse().join("-")) : null, // Date of Joining
-    DOG: dog.value ? new Date(dog.value.split("-").reverse().join("-")) : null         // Date of Graduation
+    DOJ: doj.value ,
+    DOG: dog.value        // Date of Graduation
 }
 
     if(!obj){
