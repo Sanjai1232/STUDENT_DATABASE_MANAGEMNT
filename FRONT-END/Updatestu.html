@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Students</title>
+</head>
+<body>
+    <h1>Edit Student Information</h1>
+    <label for="searchStudent">Search Student by RollNo:</label>
+    <input type="text" placeholder="Enter the Student RollNo" id="searchStudent">
+    <button id="searchBtn">Search</button>
+
+
+  <form id="editForm" style="display:none;" onsubmit="updateStudent(event)">
+    
+    <label>Name</label><br>
+    <input type="text" name="name"><br><br>
+
+    <label>Age</label><br>
+    <input type="text" name="age"><br><br>
+
+    <label>Date of Birth</label><br>
+    <input type="date" name="DOB"><br><br>
+
+    <label>Password</label><br>
+    <input type="password" name="password"><br><br>
+
+    <label>Department</label><br>
+    <input type="text" name="department"><br><br>
+
+    <label>Roll Number</label><br>
+    <input type="text" name="Rollno"><br><br>
+
+    <label>Mobile Number</label><br>
+    <input type="text" name="MobileNumber"><br><br>
+
+    <label>Current GPA</label><br>
+    <input type="text" name="CurrentGPA"><br><br>
+
+    <label>Overall CGPA</label><br>
+    <input type="text" name="OverallCGPA"><br><br>
+
+    <label>Date of Joining</label><br>
+    <input type="date" name="Dateofjoin"><br><br>
+
+    <label>Date of Graduation (DOG)</label><br>
+    <input type="date" name="DOG"><br><br>
+
+    <label>12th Marks (XII)</label><br>
+    <input type="text" name="Xii_marks"><br><br>
+
+    <label>10th Marks (X)</label><br>
+    <input type="text" name="x_marks"><br><br>
+
+    <label>Address</label><br>
+    <textarea name="address"></textarea><br><br>
+
+    <label>Email</label><br>
+    <input type="email" name="email"><br><br>
+
+    <button id="btn" type="submit">Update</button>
+
+</form>
+<script src="../Script/Updatestu.js"></script>
+</body>
+</html>

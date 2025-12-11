@@ -16,7 +16,7 @@ exports.stulogin=async(req,res,next)=>{
         })
      }
       if(avail.password==req.body.password){ 
-      // add jwt token generation here
+   //jwt token generation here
 
       const payload={
         Rollno:avail.Rollno,
@@ -189,4 +189,30 @@ exports.Myprofile=async(req,res,next)=>{
 }catch(err){
  console.log(err)
 }
+}
+exports.getsingle=async(req,res,next)=>{
+    try{
+     if(!req.user || req.user.role == 'student') {
+        return res.status(403).json({ message: "Access denied" });
+    }
+      const rollno=req.query.Rollno;  
+      console.log(rollno);
+      
+      const user=await Model.findOne({Rollno:rollno});
+      if(user){
+        return res.json({
+          message:"user found",
+          user
+        })
+      }
+    return  res.status(404).json({
+        message:"user not found"
+      })
+    }catch(err){  
+      console.log(err);
+       return res.status(500).json({
+        message:"server error"
+       })    
+    }
+
 }
