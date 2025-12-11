@@ -97,28 +97,16 @@ exports.Create=async(req,res,next)=>{
 
 //for updating data
 exports.update=async (req,res,next)=>{
-     const checking="sanjai" //inga already intha rollno irrukanu check pannanum
-     const obj={
-        name:"sanjai",// inga new rollno kodukanum
-        Rollno:"259",
-        department:"BCA",
-        MobileNumber:"9876543210",
-        CurrentGPA:"9.0",
-        OverallCGPA:"8.5",
-        Dateofjoin:"01-08-2020",
-        DOG:"30-05-2024",
-        Xii_marks:"85%",
-        x_marks:"90%",
-        password:"sanjai123"
-     }
      try{
-        console.log(checking);
-         const avail=await Model.findOne({name:checking})
+      console.log(req.body.Rollno);
+      
+         const avail=await Model.findOne({Rollno:req.body.Rollno})
          if(avail){                                   //which rollno to update  ||| what content to update
-            const update=await Model.findOneAndUpdate({name:checking}, {$set:obj})//filtering based on rollno so we can upadte easily
+            const update=await Model.findOneAndUpdate({Rollno:req.body.Rollno}, {$set:req.body})//filtering based on rollno so we can upadte easily
            console.log(update);
             return res.json({
-                message:"Succesfully data updated"
+                message:"Succesfully data updated",
+                sts:true
             })
          }
          res.status(404).json({
@@ -190,6 +178,9 @@ exports.Myprofile=async(req,res,next)=>{
  console.log(err)
 }
 }
+
+
+//api for finding  student for update based on the rollnno
 exports.getsingle=async(req,res,next)=>{
     try{
      if(!req.user || req.user.role == 'student') {
@@ -197,10 +188,10 @@ exports.getsingle=async(req,res,next)=>{
     }
       const rollno=req.query.Rollno;  
       console.log(rollno);
-      
       const user=await Model.findOne({Rollno:rollno});
       if(user){
         return res.json({
+          sts:true,
           message:"user found",
           user
         })
