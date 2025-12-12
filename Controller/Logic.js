@@ -99,7 +99,6 @@ exports.Create=async(req,res,next)=>{
 exports.update=async (req,res,next)=>{
      try{
       console.log(req.body.Rollno);
-      
          const avail=await Model.findOne({Rollno:req.body.Rollno})
          if(avail){                                   //which rollno to update  ||| what content to update
             const update=await Model.findOneAndUpdate({Rollno:req.body.Rollno}, {$set:req.body})//filtering based on rollno so we can upadte easily
@@ -142,17 +141,22 @@ exports.deletestu=async(req,res,next)=>{
     if(!req.user || req.user.role !== 'admin') {
         return res.status(403).json({ message: "Access denied" });
     }
-
-    const Rollno="259";
+    const Rollno=req.body.Rollno;
     try{
         const available= await Model.findOne({Rollno:Rollno});
       if (available) {
         const dlt=await Model.findOneAndDelete({Rollno:Rollno});
-        res.json({
+      return  res.json({
             message:"data deleted successfully",
-            data:dlt
+            data:dlt,
+            sts:true
         })   
       }
+      return res.json({
+        sts:false,
+        message:"No id found"
+      })
+    
     }catch(err){
         console.log(err);
     }
