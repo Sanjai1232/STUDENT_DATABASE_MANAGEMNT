@@ -7,83 +7,116 @@
     <link rel="stylesheet" href="../CSS/Studash.css">
 </head>
 <body>
-    <div class="container">
-        <nav class="topbar">
-            <div class="nav-left">
-                <span class="logo">Academix</span>
-            </div>
-            <div class="nav-right">
-                <div class="user-badge">
-                    <span id="navName">Student</span>
-                </div>
-            </div>
-        </nav>
+<main class="content">
 
-        <main class="content">
-            <div class="hero-section">
-                <div class="hero-text">
-                    <h1 id="heroName">Loading...</h1>
-                    <p id="heroRoll">-</p>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat-pill">
-                        <span class="pill-value" id="heroGpa">-</span>
-                        <span class="pill-label">Current GPA</span>
-                    </div>
-                    <div class="stat-pill">
-                        <span class="pill-value" id="heroCgpa">-</span>
-                        <span class="pill-label">Overall CGPA</span>
-                    </div>
-                </div>
-            </div>
+    <div class="hero-section">
+        <div class="hero-text">
+            <h1 id="heroName">Loading...</h1>
+            <p id="heroRoll">Roll No: -</p>
+            <p id="heroEmail">Email: -</p>
+        </div>
 
-            <div class="grid">
-                <div class="card">
-                    <h3>Profile</h3>
-                    <div class="card-content">
-                        <div class="field">
-                            <label>Department</label>
-                            <p id="department">-</p>
-                        </div>
-                        <div class="field">
-                            <label>Mobile</label>
-                            <p id="mobile">-</p>
-                        </div>
-                        <div class="field">
-                            <label>Joined</label>
-                            <p id="doj">-</p>
-                        </div>
-                        <div class="field">
-                            <label>Graduation</label>
-                            <p id="dog">-</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3>Academics</h3>
-                    <div class="card-content">
-                        <div class="field">
-                            <label>Current GPA</label>
-                            <p id="gpa">-</p>
-                        </div>
-                        <div class="field">
-                            <label>Overall CGPA</label>
-                            <p id="cgpa">-</p>
-                        </div>
-                        <div class="field">
-                            <label>Class XII</label>
-                            <p id="xii">-</p>
-                        </div>
-                        <div class="field">
-                            <label>Class X</label>
-                            <p id="x">-</p>
-                        </div>
-                    </div>
-                </div>
+        <div class="hero-stats">
+            <div class="stat-pill">
+                <span class="pill-value" id="heroGpa">-</span>
+                <span class="pill-label">Current GPA</span>
             </div>
-        </main>
+            <div class="stat-pill">
+                <span class="pill-value" id="heroCgpa">-</span>
+                <span class="pill-label">Overall CGPA</span>
+            </div>
+        </div>
     </div>
-    <script src="../Script/STUDASH.js"></script>
+
+    <div class="grid">
+
+        <!-- PROFILE CARD -->
+        <div class="card">
+            <h3>Profile</h3>
+            <div class="card-content">
+
+                <div class="field">
+                    <label>Name</label>
+                    <p id="name">-</p>
+                </div>
+
+                <div class="field">
+                    <label>Age</label>
+                    <p id="age">-</p>
+                </div>
+
+                <div class="field">
+                    <label>Date of Birth</label>
+                    <p id="dob">-</p>
+                </div>
+
+                <div class="field">
+                    <label>Department</label>
+                    <p id="department">-</p>
+                </div>
+
+                <div class="field">
+                    <label>Roll Number</label>
+                    <p id="rollno">-</p>
+                </div>
+
+                <div class="field">
+                    <label>Mobile Number</label>
+                    <p id="mobile">-</p>
+                </div>
+
+                <div class="field">
+                    <label>Email</label>
+                    <p id="email">-</p>
+                </div>
+
+                <div class="field">
+                    <label>Address</label>
+                    <p id="address">-</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ACADEMICS CARD -->
+        <div class="card">
+            <h3>Academics</h3>
+            <div class="card-content">
+
+                <div class="field">
+                    <label>Current GPA</label>
+                    <p id="gpa">-</p>
+                </div>
+
+                <div class="field">
+                    <label>Overall CGPA</label>
+                    <p id="cgpa">-</p>
+                </div>
+
+                <div class="field">
+                    <label>12th Marks (XII)</label>
+                    <p id="xii">-</p>
+                </div>
+
+                <div class="field">
+                    <label>10th Marks (X)</label>
+                    <p id="x">-</p>
+                </div>
+
+                <div class="field">
+                    <label>Date of Joining</label>
+                    <p id="doj">-</p>
+                </div>
+
+                <div class="field">
+                    <label>Date of Graduation (DOG)</label>
+                    <p id="dog">-</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</main>
+<script src="../Script/STUDASH.js"></script>
 </body>
 </html>

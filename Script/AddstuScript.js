@@ -1,4 +1,4 @@
-name=document.getElementById('name')
+namee=document.getElementById('name')
 age=document.getElementById('age')
 dob=document.getElementById('dob')
 mno=document.getElementById('mno')
@@ -19,7 +19,7 @@ btn=document.getElementById('btn')
 btn.onclick=async(e)=>{
     e.preventDefault();
 const obj={
-    name:name.value,
+    name:namee.value,
     age:age.value,
     DOB:dob.value,  
     MobileNumber:mno.value,
