@@ -156,6 +156,11 @@
                 gap: 5px;
             }
         }
+        .myTable {
+  border-collapse: separate;   /* important */
+  border-spacing: 20px;        /* space between cells */
+}
+
     </style>
 </head>
 <body>
@@ -169,22 +174,20 @@
             <div class="student-list">
                 <h2>Students List</h2>
                 <div id="studentListContainer">
-                 <h4 id="stuname">Loading students...</h4>
+                 <table id="myTable" class="myTable">
+                 <tr>
+                    <th >Name</th>
+                     <th >Department</th>
+                      <th >rollno</th>
+                </tr>
+                </table>
              <br></br>
              <br>    
             </div>
             </div>
-
-            <div class="student-details">
-                <div id="detailsContainer">
-                    <div class="no-selection">
-                        <p>👈 Select a student to view details</p>
-        
-                    </div>
-                </div>
             </div>
         </div>
     </div>
-    <script src="../Script/AllStudents.js"></script>
+<script defer src="../Script/AllStudents.js"></script>
 </body>
 </html>
