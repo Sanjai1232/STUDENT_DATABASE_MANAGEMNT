@@ -125,7 +125,7 @@ exports.Alldata=async(req,res,next)=>{
         return res.status(403).json({ message: "Access denied",sts:false });
     }
 const data = await Model.find({
-  department: { $in: ["bca", "BCA"] },
+  department:  req.user.department,
   role: { $in: ["student", "STUDENT"] }
 }); //filtering based on department //HERE WE SHOULD USE STAFF DEAPRTMRNT "eg:req.department" 
   res.json({

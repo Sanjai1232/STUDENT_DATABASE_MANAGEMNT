@@ -42,8 +42,6 @@ const funct=async()=>{
      row.insertCell(6).innerHTML = student.OverallCGPA;
      row.insertCell(7).innerHTML = student.email;
      row.insertCell(8).innerHTML = student.address;
-
-
   });
 
     
