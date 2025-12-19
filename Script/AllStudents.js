@@ -21,13 +21,29 @@ const funct=async()=>{
   const ssrollno=document.getElementById('rno');
   const rr=data.data;
   console.log(data);
-  
   console.log(rr);
+
+
+ 
   let table = document.getElementById("myTable");
   rr.forEach(student => {
     let row = table.insertRow();
     row.insertCell(0).innerHTML = student.name;
      row.insertCell(1).innerHTML = student.department;
+     row.insertCell(2).innerHTML = student.Rollno;
+     row.insertCell(3).innerHTML = student.age;
+         const birth=student.DOB;
+  console.log(birth);
+  
+  const dob = birth? birth.split('T')[0] : "undefined";
+  console.log("da"+dob);
+       row.insertCell(4).innerHTML = dob;
+     row.insertCell(5).innerHTML = student.MobileNumber;
+     row.insertCell(6).innerHTML = student.OverallCGPA;
+     row.insertCell(7).innerHTML = student.email;
+     row.insertCell(8).innerHTML = student.address;
+
+
   });
 
     

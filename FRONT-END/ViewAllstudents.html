@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Admin Panel</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
         * {
             margin: 0;
             padding: 0;
@@ -12,132 +14,10 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Poppins', sans-serif;
+          background: linear-gradient(135deg, #191938 0%, #0d0c0f 100%);
             min-height: 100vh;
             padding: 20px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        }
-
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 30px;
-            text-align: center;
-        }
-
-        .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-
-        .content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0;
-            min-height: 500px;
-        }
-
-        .student-list {
-            border-right: 2px solid #e0e0e0;
-            padding: 20px;
-            overflow-y: auto;
-            max-height: 600px;
-        }
-
-        .student-list h2 {
-            color: #667eea;
-            margin-bottom: 20px;
-            font-size: 1.5em;
-        }
-
-        .student-item {
-            padding: 15px;
-            margin-bottom: 10px;
-            border: 2px solid #e0e0e0;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            background: white;
-        }
-
-        .student-item:hover {
-            background: #f5f7ff;
-            border-color: #667eea;
-            transform: translateX(5px);
-        }
-
-        .student-item.active {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-color: #667eea;
-        }
-
-        .student-item .name {
-            font-weight: bold;
-            font-size: 1.1em;
-            margin-bottom: 5px;
-        }
-
-        .student-item .roll {
-            font-size: 0.9em;
-            opacity: 0.8;
-        }
-
-        .student-details {
-            padding: 20px;
-            background: #f9f9f9;
-        }
-
-        .student-details h2 {
-            color: #667eea;
-            margin-bottom: 30px;
-            font-size: 1.5em;
-        }
-
-        .no-selection {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            color: #999;
-            font-size: 1.2em;
-            text-align: center;
-        }
-
-        .detail-card {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .detail-row {
-            display: grid;
-            grid-template-columns: 150px 1fr;
-            padding: 15px 0;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        .detail-row:last-child {
-            border-bottom: none;
-        }
-
-        .detail-label {
-            font-weight: bold;
-            color: #667eea;
-        }
-
-        .detail-value {
-            color: #333;
         }
 
         @media (max-width: 768px) {
@@ -157,8 +37,23 @@
             }
         }
         .myTable {
-  border-collapse: separate;   /* important */
-  border-spacing: 20px;        /* space between cells */
+ 
+  border-collapse: collapse;
+  width: 100%;
+
+
+th,td{
+    border:     1px solid #9d9d9d;
+    color: white;
+  text-align: center;
+  font-size: 18px;
+  
+}
+        }
+.header{
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
 }
 
     </style>
@@ -167,22 +62,26 @@
     <div class="container">
         <div class="header">
             <h1>🎓 Student Admin Panel</h1>
-            <p>Click on a student to view full details</p>
+           <h2>Students List</h2>
         </div>
 
         <div class="content">
             <div class="student-list">
-                <h2>Students List</h2>
+                
                 <div id="studentListContainer">
                  <table id="myTable" class="myTable">
                  <tr>
                     <th >Name</th>
                      <th >Department</th>
                       <th >rollno</th>
+                      <th >age</th>
+                      <th >D.O.B</th>
+                      <th >MobileNumber</th>
+                      <th >CGPA</th>
+                       <th >Email</th>
+                        <th >address</th>
                 </tr>
-                </table>
-             <br></br>
-             <br>    
+                </table>   
             </div>
             </div>
             </div>
