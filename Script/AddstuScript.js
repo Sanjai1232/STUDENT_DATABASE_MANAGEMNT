@@ -47,6 +47,8 @@ const obj={
     })
     const data= await res.json()
     console.log(data);
-    
-    
+    if(data.st){
+       return   alert("Student added successfully")
+    }
+    alert("Error in adding student")
 }

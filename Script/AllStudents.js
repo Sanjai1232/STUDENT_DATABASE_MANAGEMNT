@@ -15,8 +15,6 @@ const funct=async()=>{
     console.log("crct");
     
     const data=await res.json();
-  //  console.log(data)
-
   const ssname=document.getElementById('n');
   const ssrollno=document.getElementById('rno');
   const rr=data.data;
