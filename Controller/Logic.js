@@ -55,6 +55,7 @@ exports.stulogin=async(req,res,next)=>{
               }
               const token=jwt.sign(payload,"0000",{expiresIn:'1h'})
              // add jwt token generation here
+             
              console.log("user found");
            return res.json({
             avail,
@@ -70,10 +71,10 @@ exports.stulogin=async(req,res,next)=>{
             })
         }
      }
-
-
 //for creating data
 exports.Create=async(req,res,next)=>{
+
+  
      //const namee="joseph";// change this to req.body
      try{
     const avail= await Model.findOne({Rollno:req.body.Rollno}); // use rollnumber here

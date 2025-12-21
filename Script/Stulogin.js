@@ -1,3 +1,8 @@
+if( !localStorage.getItem("token")){
+    alert("please login first");
+    window.location.href="login.html";
+}
+
 const rollno=document.getElementById("rollno")
 const password=document.getElementById("password")
 const btn=document.getElementById("stuloginbtn")

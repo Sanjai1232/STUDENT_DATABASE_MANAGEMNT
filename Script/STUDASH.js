@@ -1,5 +1,8 @@
 const api = "http://localhost:3000/my-profile";
-
+if( !localStorage.getItem("token")){
+    alert("please login first");
+    window.location.href="login.html";
+}
 // Helper function to format ISO date → DD/MM/YYYY
 const formatDate = (isoDate) => {
     if (!isoDate) return "-";
@@ -17,8 +20,6 @@ fetch(api, {
 .then(res => res.json())
 .then(studentData => {
     const user = studentData.user;
-    console.log(user);
-
     // Hero Section
     document.getElementById('heroName').textContent = user.name || "-";
     document.getElementById('heroRoll').textContent = `Roll No: ${user.Rollno || "-"}`;

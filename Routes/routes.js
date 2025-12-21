@@ -2,7 +2,7 @@ const express = require('express');
 const { Sample, Create, update, Alldata,  deletestu, Myprofile, stulogin, adminlogin, getsingle, } = require('../Controller/Logic');
 const { auth, isAdmin } = require('../Middleware/auth');
 const router = express.Router();
-router.route('/add_student').post(Create)// complted 
+router.route('/add_student').post(auth,Create)// complted 
 router.route('/update_Student').put(update) //completed need UI update
 router.route('/All_Student').get(auth,Alldata) 
 router.route('/Delete_Student').delete(auth,deletestu) 

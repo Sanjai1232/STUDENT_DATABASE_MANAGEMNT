@@ -14,7 +14,17 @@ exports.auth = (req, res, next) => {
         req.user = decoded; // contains id + role
         next();
     } catch (err) {
-        res.status(403).json({ message: "Invalid token" });
+        if (err.name === "TokenExpiredError") {
+      return res.status(401).json({
+        success: false,
+        message: "Session expired. Please login again",
+      });
     }
-};
 
+    // 🔴 INVALID TOKEN
+    return res.status(401).json({
+      success: false,
+      message: "Invalid token",
+    });
+  }
+    }

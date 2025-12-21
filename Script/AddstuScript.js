@@ -1,8 +1,15 @@
+if( !localStorage.getItem("token")){
+    alert("please login first");
+    window.location.href="login.html";
+}
+
+
+
 namee=document.getElementById('name')
 age=document.getElementById('age')
 dob=document.getElementById('dob')
 mno=document.getElementById('mno')
-Department=document.getElementById('Department')
+Dd=document.getElementById('Department')
 Rollno=document.getElementById('Rollno')
 gpa=document.getElementById('gpa')
 cgpa=document.getElementById('cgpa')
@@ -14,16 +21,16 @@ pass=document.getElementById('password')
 doj=document.getElementById('DOJ')
 dog=document.getElementById('DOG')
 btn=document.getElementById('btn')
-
-
 btn.onclick=async(e)=>{
     e.preventDefault();
+    Department=Dd.value.toUpperCase();
+console.log(Department);
 const obj={
     name:namee.value,
     age:age.value,
     DOB:dob.value,  
     MobileNumber:mno.value,
-    department:Department.value,
+    department:Department,
     Rollno:Rollno.value,
     CurrentGPA:gpa.value,
     OverallCGPA:cgpa.value,
@@ -36,7 +43,6 @@ const obj={
     DOG:dog.value
 
 }
-  
     const res= await fetch('http://localhost:3000/add_student',{
         method:'POST',
         headers:{
@@ -47,7 +53,7 @@ const obj={
     })
     const data= await res.json()
     console.log(data);
-    if(data.st){
+    if(data.sts){
        return   alert("Student added successfully")
     }
     alert("Error in adding student")
